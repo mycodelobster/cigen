@@ -26,7 +26,7 @@ class Cigen extends CI_Controller
 		}
 		else
 		{
-			echo "Controller '$controller_name' Created \n";
+			echo "C";
 		}
 
 
@@ -44,7 +44,7 @@ class Cigen extends CI_Controller
 		}
 		else
 		{
-			echo "Model '$controller_name' Created \n" ;
+			echo "M" ;
 		}
 
 
@@ -63,7 +63,7 @@ class Cigen extends CI_Controller
 		}
 		else
 		{
-			echo "View  '$controller_name' Add Created \n" ;
+			echo "A" ;
 		}
 
 
@@ -77,7 +77,7 @@ class Cigen extends CI_Controller
 		}
 		else
 		{
-			echo "View  '$controller_name' Update Created \n" ;
+			echo "P" ;
 		}
 
 		// Listing
@@ -91,12 +91,12 @@ class Cigen extends CI_Controller
 		}
 		else
 		{
-			echo "View '$controller_name' Listing Created \n" ;
+			echo "L ::: CRUD CREATED" ;
 		}
 
 
-		echo "subl app/controllers/$controller_name".".php"." app/models/$controller_name"."_model.php";
-		echo "\nsubl app/views/$controller_name";
+		echo "\nsubl app/controllers/$controller_name".".php"." app/models/$controller_name"."_model.php";
+		echo " app/views/$controller_name";
 
 	}
 
@@ -135,6 +135,22 @@ class Cigen extends CI_Controller
 		else
 		{
 			echo "Database Created \n" ;
+		}
+	}
+
+	public function sidebar($controller){
+		$this->load->helper("file");
+		$li  = "<li class='list-group-item'><?php echo anchor(base_url('$controller'), '".ucfirst($controller)."') ?></li>"; 
+		$sidebar_path = "./app/views/layout/sidebar.php";
+		$sidebar_content = file_get_contents('./app/views/layout/sidebar.php');
+		$sidebar_content = str_replace('<!--SECTION-->', "$li \n <!--SECTION-->", $sidebar_content);
+		if ( ! write_file($sidebar_path, $sidebar_content))
+		{
+			echo 'Unable to write the file';
+		}
+		else
+		{
+			echo "Add Sidebar Success \n" ;
 		}
 	}
 
