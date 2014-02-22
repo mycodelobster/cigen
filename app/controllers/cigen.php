@@ -8,7 +8,7 @@ class Cigen extends CI_Controller
 		parent::__construct();
 	}
 	
-	public function build ($controller_name=false, $table_name=false ,$primary_key=false, $field=false)
+	public function build ($controller_name=false, $primary_key=false, $field=false, $table_name=false)
 	{
 
 		if($controller_name==false OR $table_name==false OR $primary_key==false OR $field==false){
@@ -164,7 +164,9 @@ class Cigen extends CI_Controller
 
 	public function help()
 	{
-		echo "cigen build controller_name table_name primary_key";
+		echo "cigen build controller_name primary_key first_field table_name \n";
+		echo "cigen build_config  folder_name database_name \n";
+		echo "cigen remove  controller_name \n";
 	}
 
 }
