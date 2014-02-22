@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['base_url']	= 'http://localhost:8000/{base_url}';
+$config['base_url']	= 'http://localhost:8000/demo';
 $config['index_page'] = '';
 
 /*
@@ -335,3 +335,4 @@ $config['proxy_ips'] = '';
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */
+php

@@ -114,7 +114,36 @@ class Cigen extends CI_Controller
 		exec("rm -rf " . "./app/controllers/$controller_name" . ".php");
 		exec("rm -rf " . "./app/models/$controller_name" . "_model.php");
 		exec("rm -rf " . "./app/views/$controller_name");
-		echo "success";
+		echo "All $controller_name Structure was deleted";
+	}
+
+	public function build_config($folder,$database)
+	{
+		$this->load->helper('file');
+		$config_path = "./app/config/config.php";
+		$config_content = file_get_contents('./app/config/config.php');
+		$config_content = str_replace('{base_url}', $folder, $config_content);
+		if ( ! write_file($config_path, $config_content))
+		{
+			echo 'Unable to write the file';
+		}
+		else
+		{
+			echo "Base URL Created \n" ;
+		}
+
+
+		$config_path = "./app/config/database.php";
+		$config_content = file_get_contents('./app/config/database.php');
+		$config_content = str_replace('wordpress', $database, $config_content);
+		if ( ! write_file($config_path, $config_content))
+		{
+			echo 'Unable to write the file';
+		}
+		else
+		{
+			echo "Database Created \n" ;
+		}
 	}
 
 	public function help()
