@@ -100,8 +100,8 @@ function generate_table($data=array(),$primary_key='id',$controller){
 				$table .= "<td>$value</td>";
 			}
 			$table .= "<td>";
-			$table .= "<a href='".base_url().$controller."/update/".$item->{$primary_key}."' class='btn btn-primary'>Update</a>";
-			$table .= "<a href='".base_url().$controller."/delete/".$item->{$primary_key}."' class='btn btn-primary' style='margin-left:5px'>Delete</a>";
+			$table .= "<a href='".base_url().$controller."/update/".$item->$primary_key."' class='btn btn-primary'>Update</a>";
+			$table .= "<a href='".base_url().$controller."/delete/".$item->$primary_key."' class='btn btn-primary' style='margin-left:5px'>Delete</a>";
 			$table .= "</td>";
 			$table .= "</tr>";
 		}
