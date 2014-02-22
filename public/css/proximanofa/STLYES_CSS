@@ -1,0 +1,122 @@
+/* Foundation v2.2 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+	body { font: 16px/100% "Proxima" "Helvetica" Arial sans-serif; color: rgba(204,204,204, 1); background: url(/images/brograms/background.jpg) top center; text-align: center; }
+	.heading {margin: 20px 0px;}
+	.row { max-width: 600px; min-width: 0;}
+	
+	.well { border: 0px solid rgba(102,102,102, .6); border-width: 1px 0px; padding: 20px 0; background: url(/images/brograms/formgradient.png) top center no-repeat; background-size: 100% auto; margin-bottom: 20px; }
+	.well.bottom { border-width: 1px 0 0 0; margin-top: 30px; }
+	
+	.red {color: rgba(255,204,204, .4); margin-top: 10px; text-align: left;}
+	
+	/* Font-Face */
+	@font-face {
+	font-family: 'Proxima';
+	       src: url(../fonts/proximanova-regular-webfont.eot?1307578394);
+	       src: url('../fonts/proximanova-regular-webfont.eot?iefix') format('eot'),url(../fonts/proximanova-regular-webfont.woff?1307578394) format('woff'),url(../fonts/proximanova-regular-webfont.ttf?1307578394) format('truetype'),url('../fonts/proximanova-regular-webfont.svg#webfont2rpW2ohz') format('svg')
+	}
+	@font-face {
+	       font-family: 'Proxima';
+	       font-style: italic;
+	       src: url(../fonts/proximanova-regitalic-webfont.eot?1307578394);
+	       src: url('../fonts/proximanova-regitalic-webfont.eot?iefix') format('eot'),url(../fonts/proximanova-regitalic-webfont.woff?1307578394) format('woff'),url(../fonts/proximanova-regitalic-webfont.ttf?1307578394) format('truetype'),url('../fonts/proximanova-regitalic-webfont.svg#webfont2rpW2ohz') format('svg')
+	}
+	@font-face {
+	       font-family: 'Proxima';
+	       font-weight: 300;
+	       src: url(../fonts/proximanova-light-webfont.eot?1307578394);
+	       src: url('../fonts/proximanova-light-webfont.eot?iefix') format('eot'),url(../fonts/proximanova-light-webfont.woff?1307578394) format('woff'),url(../fonts/proximanova-light-webfont.ttf?1307578394) format('truetype'),url('../fonts/proximanova-light-webfont.svg#webfont2rpW2ohz') format('svg')
+	}
+	@font-face {
+	       font-family: 'Proxima';
+	       font-weight: 600;
+	       src: url(../fonts/proximanova-semibold-webfont.eot?1307578394);
+	       src: url('../fonts/proximanova-semibold-webfont.eot?iefix') format('eot'),url(../fonts/proximanova-semibold-webfont.woff?1307578394) format('woff'),url(../fonts/proximanova-semibold-webfont.ttf?1307578394) format('truetype'),url('../fonts/proximanova-semibold-webfont.svg#webfont2rpW2ohz') format('svg')
+	}
+	@font-face {
+	       font-family: 'Proxima';
+	       font-weight: 600;
+	       font-style: italic;
+	       src: url(../fonts/proximanova-semibolditalic-webfont.eot?1307578394);
+	       src: url('../fonts/proximanova-semibolditalic-webfont.eot?iefix') format('eot'),url(../fonts/proximanova-semibolditalic-webfont.woff?1307578394) format('woff'),url(../fonts/proximanova-semibolditalic-webfont.ttf?1307578394) format('truetype'),url('../fonts/proximanova-semibolditalic-webfont.svg#webfont2rpW2ohz') format('svg')
+	}
+	@font-face {
+	       font-family: 'Proxima';
+	       font-weight: bold;
+	       src: url(../fonts/proximanova-bold-webfont.eot?1307578394);
+	       src: url('../fonts/proximanova-bold-webfont.eot?iefix') format('eot'),url(../fonts/proximanova-bold-webfont.woff?1307578394) format('woff'),url(../fonts/proximanova-bold-webfont.ttf?1307578394) format('truetype'),url('../fonts/proximanova-bold-webfont.svg#webfont2rpW2ohz') format('svg')
+	}
+	@font-face {
+	       font-family: 'Proxima';
+	       font-weight: bold;
+	       font-style: italic;
+	       src: url(../fonts/proximanova-boldit-webfont.eot?1307578394);
+	       src: url('../fonts/proximanova-boldit-webfont.eot?iefix') format('eot'),url(../fonts/proximanova-boldit-webfont.woff?1307578394) format('woff'),url(../fonts/proximanova-boldit-webfont.ttf?1307578394) format('truetype'),url('../fonts/proximanova-boldit-webfont.svg#webfont2rpW2ohz') format('svg')
+	}
+	@font-face {
+	       font-family: 'Proxima';
+	       font-weight: 900;
+	       src: url(../fonts/proximanova-extrabold-webfont.eot?1307578394);
+	       src: url('../fonts/proximanova-extrabold-webfont.eot?iefix') format('eot'),url(../fonts/proximanova-extrabold-webfont.woff?1307578394) format('woff'),url(../fonts/proximanova-extrabold-webfont.ttf?1307578394) format('truetype'),url('../fonts/proximanova-extrabold-webfont.svg#webfont2rpW2ohz') format('svg')
+	}
+
+/* -----------------------------------------
+   Main Page
+----------------------------------------- */
+	p.putcenter { text-align: center; font-size: 1em; margin-bottom: 0; }
+	
+	.options {font-size: 1.5em; max-width: 95%; margin: 0 auto; padding: 25px 0; text-align: center; color: rgba(204,204,204, 1);}
+	.send {font-size: 2em; text-align: center; color: rgba(204,204,204, 1); margin: 10px 0 25px 0; }
+	.choice {font-size: 1.5em; text-align: center; color: rgba(204,204,204, 1);}
+	
+	hr { border: 0px solid rgba(102,102,102, .6); border-width: 0 0 1px 0;}
+	.wrapper {border: 7px solid rgba(255,204,204, .3); margin-top: 15px;}
+	.wrapper .flex-video { margin-bottom: 0; }
+	
+	.type-of-brogram { text-align: center; height: 50px; }
+	.type-of-brogram li { display: inline-block; width: 50px; height: 50px; margin-left: 20px; }
+	.type-of-brogram li:first-child { margin-left: 0; }
+	.type-of-brogram li span.custom { width: 50px; height: 50px; display: block; background: rgba(255,204,204, .3); -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0 !important; border: none; }
+	.type-of-brogram li span.custom.checked { border: 3px solid white; position: relative; top: -5px; left: -5px; }
+	form.custom span.custom.radio.checked { background-position: center; }
+	
+	.mini-hf span.custom.radio {background-image: url(/images/brograms/hfmini.png); background-size: 100% 100%; }
+	.mini-ic span.custom.radio {background-image: url(/images/brograms/icmini.png); background-size: 50% 100%; background-repeat: no-repeat; background-position: center;}
+	.mini-lb span.custom.radio {background-image: url(/images/brograms/lbmini.png); background-size: 100% 100%;}
+	
+	p.submit { position: relative; top: 35px; z-index: 100; }
+	.submit {max-width: 30%; margin: 0 auto;}
+
+	#sendBrogram input.input-text { color: #fff; background: rgba(255,204,204, .3); border: none; margin: 10px 0 10px 0; padding: 10px;}
+	#brogramTime { display: block; width: 180px; margin: 0 auto; }
+	
+	#submitBrogram { width: 180px; height: 43px; background: url(/images/brograms/submit.png) 0 0 no-repeat; border: none; margin: 0; padding: 0; text-indent: -9999px; cursor: pointer; }
+	#submitBrogram:hover { background-position: 0 -43px; }
+	
+
+
+/* ----------------------------------------
+   Confirmation Page
+----------------------------------------- */
+	h4 {font-style: italic;}
+	
+	h2, h3, h4, h5 {color: rgba(204,204,204, 1);}
+	
+	.space {padding-top: 60px;}
+	.big {font-size: .9em;}
+
+
+
