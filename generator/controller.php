@@ -17,7 +17,7 @@ class {controller_name_1} extends CI_Controller
 
 	public function listing()
 	{
-		$this->data["{controller_name}_listing"] = $this->${controller_name}->get_all();
+		$this->data["{controller_name}_lists"] = $this->{controller_name}->get_all();
 		$this->load->view("{controller_name}/{controller_name}_listing", $this->data);
 	}
 
@@ -44,17 +44,17 @@ class {controller_name_1} extends CI_Controller
 			$form_data = array(
 				"field" => $this->input->post('field',TRUE)
 				);
-			$this->{controller_name}->insert(${primary_key}, $form_data);
+			$this->{controller_name}->update(${primary_key}, $form_data);
 			set_success("Succesfully Updated");
 			redirect(base_url("{controller_name}"));
 		}
-		$this->data["{controller_name}"] = $this->${controller_name}->get(${primary_key});
+		$this->data["{controller_name}"] = $this->{controller_name}->get(${primary_key});
 		$this->load->view("{controller_name}/{controller_name}_update", $this->data);
 	}
 	
 	public function delete(${primary_key} = NULL )
 	{
-		$this->${controller_name}->delete(${primary_key});
+		$this->{controller_name}->delete(${primary_key});
 		set_success("Succesfully Deleted");
 		redirect(base_url("{controller_name}"));
 	}

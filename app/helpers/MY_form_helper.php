@@ -76,7 +76,7 @@ function button_action($url=null,$text=null,$style="btn-primary")
 }
 
 // TABLE GENERATOR
-function generate_table($data=array(),$primary_key='id'){
+function generate_table($data=array(),$primary_key='id',$controller){
 	if($data){
 		$table = "<table class='table table-bordered'>";
 
@@ -100,8 +100,8 @@ function generate_table($data=array(),$primary_key='id'){
 				$table .= "<td>$value</td>";
 			}
 			$table .= "<td>";
-			$table .= "<a href='".current_url()."/update/".$item->{$primary_key}."' class='btn btn-primary'>Update</a>";
-			$table .= "<a href='".current_url()."/delete/".$item->{$primary_key}."' class='btn btn-primary' style='margin-left:5px'>Delete</a>";
+			$table .= "<a href='".base_url().$controller."/update/".$item->{$primary_key}."' class='btn btn-primary'>Update</a>";
+			$table .= "<a href='".base_url().$controller."/delete/".$item->{$primary_key}."' class='btn btn-primary' style='margin-left:5px'>Delete</a>";
 			$table .= "</td>";
 			$table .= "</tr>";
 		}

@@ -56,10 +56,7 @@ class Cigen extends CI_Controller
 		// ADD 
 		$view_path_update = "./app/views/". $controller_name . "/". $controller_name ."_add.php";
 		$view_content_update = file_get_contents('./generator/add.php');
-		$view_content_update = str_replace('{model_name_1}', ucfirst($controller_name) . '_model', $view_content_update);
-		$view_content_update = str_replace('{model_name}', $controller_name, $view_content_update);
-		$view_content_update = str_replace('{table_name}', $table_name, $view_content_update);
-		$view_content_update = str_replace('{primary_key}', $primary_key, $view_content_update);
+		$view_content_update = str_replace('{controller_name}', $controller_name, $view_content_update);
 		if ( ! write_file($view_path_update, $view_content_update))
 		{
 			echo 'Unable to write the file';
@@ -72,11 +69,8 @@ class Cigen extends CI_Controller
 
 		// Update
 		$view_path_update = "./app/views/". $controller_name . "/". $controller_name ."_update.php";
-		$view_content_update = file_get_contents('./generator/add.php');
-		$view_content_update = str_replace('{model_name_1}', ucfirst($controller_name) . '_model', $view_content_update);
-		$view_content_update = str_replace('{model_name}', $controller_name, $view_content_update);
-		$view_content_update = str_replace('{table_name}', $table_name, $view_content_update);
-		$view_content_update = str_replace('{primary_key}', $primary_key, $view_content_update);
+		$view_content_update = file_get_contents('./generator/update.php');
+		$view_content_update = str_replace('{controller_name}', $controller_name, $view_content_update);
 		if ( ! write_file($view_path_update, $view_content_update))
 		{
 			echo 'Unable to write the file';
@@ -88,10 +82,8 @@ class Cigen extends CI_Controller
 
 		// Listing
 		$view_path_listing = "./app/views/". $controller_name . "/". $controller_name ."_listing.php";
-		$view_content_listing = file_get_contents('./generator/add.php');
-		$view_content_listing = str_replace('{model_name_1}', ucfirst($controller_name) . '_model', $view_content_listing);
-		$view_content_listing = str_replace('{model_name}', $controller_name, $view_content_listing);
-		$view_content_listing = str_replace('{table_name}', $table_name, $view_content_listing);
+		$view_content_listing = file_get_contents('./generator/listing.php');
+		$view_content_listing = str_replace('{controller_name}', $controller_name, $view_content_listing);
 		$view_content_listing = str_replace('{primary_key}', $primary_key, $view_content_listing);
 		if ( ! write_file($view_path_listing, $view_content_listing))
 		{
@@ -122,7 +114,7 @@ class Cigen extends CI_Controller
 		$this->load->helper('file');
 		$config_path = "./app/config/config.php";
 		$config_content = file_get_contents('./app/config/config.php');
-		$config_content = str_replace('{base_url}', $folder, $config_content);
+		$config_content = str_replace('cigen', $folder, $config_content);
 		if ( ! write_file($config_path, $config_content))
 		{
 			echo 'Unable to write the file';

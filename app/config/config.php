@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['base_url']	= 'http://localhost:8000/{base_url}';
+$config['base_url']	= 'http://localhost:8000/cigen';
 $config['index_page'] = '';
 
 /*

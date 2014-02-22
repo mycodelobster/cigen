@@ -8,7 +8,7 @@ class {model_name_1} extends CI_Model
 		parent::__construct();
 	}
 
-	public function add($data = array())
+	public function insert($data = array())
 	{
 		if($this->db->insert("{table_name}", $data)) return TRUE;
 		return FALSE;
@@ -17,9 +17,9 @@ class {model_name_1} extends CI_Model
 	
 	public function get(${primary_key})
 	{
-		$this->db->where("{primary_key}", $primary_key);
+		$this->db->where("{primary_key}", ${primary_key});
 		$query = $this->db->get("{table_name}",1);
-		if($query->num_rows() == 1) return $query->result();
+		if($query->num_rows() == 1) return $query->row();
 		return FALSE;
 	}
 
