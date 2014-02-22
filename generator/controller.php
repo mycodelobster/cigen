@@ -23,11 +23,11 @@ class {controller_name_1} extends CI_Controller
 
 	public function add()
 	{
-		$this->form_validation->generate(array("field"));
+		$this->form_validation->generate(array("{first_field}"));
 		if($this->form_validation->run())
 		{
 			$form_data = array(
-				"field" => $this->input->post('field',TRUE)
+				"{first_field}" => $this->input->post('{first_field}',TRUE)
 				);
 			$this->{controller_name}->insert($form_data);
 			set_success("Succesfully Added");
@@ -38,11 +38,11 @@ class {controller_name_1} extends CI_Controller
 	
 	public function update(${primary_key} = NULL )
 	{
-		$this->form_validation->generate(array("field"));
+		$this->form_validation->generate(array("{first_field}"));
 		if($this->form_validation->run())
 		{
 			$form_data = array(
-				"field" => $this->input->post('field',TRUE)
+				"{first_field}" => $this->input->post('{first_field}',TRUE)
 				);
 			$this->{controller_name}->update(${primary_key}, $form_data);
 			set_success("Succesfully Updated");

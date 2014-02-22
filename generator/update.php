@@ -16,7 +16,7 @@
 					<form action="" method="POST" role="form">
 						<?php alert() ?>
 						<legend>Update {controller_name}</legend>
-						<?php form_text('{controller_name}', ${controller_name}->{controller_name})?>
+						<?php form_text('{first_field}', ${controller_name}->{first_field})?>
 						<?php form_button('Update {controller_name}') ?>
 					</form>
 				</div>

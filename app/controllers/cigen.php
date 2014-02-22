@@ -8,10 +8,14 @@ class Cigen extends CI_Controller
 		parent::__construct();
 	}
 	
-	public function build ($controller_name=null, $table_name="table" ,$primary_key="ID")
+	public function build ($controller_name=false, $table_name=false ,$primary_key=false, $field=false)
 	{
+
+		if($controller_name==false OR $table_name==false OR $primary_key==false OR $field==false){
+			exit("ERROR ! CHECK YOUR COMMAND");
+		}
+
 		$this->load->helper('file');
-		
 		// Container Builder
 		$container_path = "./app/controllers/". $controller_name .".php";
 		$container_content = file_get_contents('./generator/controller.php');
@@ -19,6 +23,7 @@ class Cigen extends CI_Controller
 		$container_content = str_replace('{controller_name}', $controller_name, $container_content);
 		$container_content = str_replace('{table_name}', $table_name, $container_content);
 		$container_content = str_replace('{primary_key}', $primary_key, $container_content);
+		$container_content = str_replace('{first_field}', $field, $container_content);
 
 		if ( ! write_file($container_path, $container_content))
 		{
@@ -37,6 +42,7 @@ class Cigen extends CI_Controller
 		$model_content = str_replace('{model_name}', $controller_name, $model_content);
 		$model_content = str_replace('{table_name}', $table_name, $model_content);
 		$model_content = str_replace('{primary_key}', $primary_key, $model_content);
+		$model_content = str_replace('{first_field}', $field, $model_content);
 
 		if ( ! write_file($model_path, $model_content))
 		{
@@ -57,6 +63,7 @@ class Cigen extends CI_Controller
 		$view_path_update = "./app/views/". $controller_name . "/". $controller_name ."_add.php";
 		$view_content_update = file_get_contents('./generator/add.php');
 		$view_content_update = str_replace('{controller_name}', $controller_name, $view_content_update);
+		$view_content_update = str_replace('{first_field}', $field, $view_content_update);
 		if ( ! write_file($view_path_update, $view_content_update))
 		{
 			echo 'Unable to write the file';
@@ -71,6 +78,7 @@ class Cigen extends CI_Controller
 		$view_path_update = "./app/views/". $controller_name . "/". $controller_name ."_update.php";
 		$view_content_update = file_get_contents('./generator/update.php');
 		$view_content_update = str_replace('{controller_name}', $controller_name, $view_content_update);
+		$view_content_update = str_replace('{first_field}', $field, $view_content_update);
 		if ( ! write_file($view_path_update, $view_content_update))
 		{
 			echo 'Unable to write the file';

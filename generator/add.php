@@ -16,7 +16,7 @@
 					<form action="" method="POST" role="form">
 						<?php alert() ?>
 						<legend>Add new {controller_name}</legend>
-						<?php form_text('{controller_name}')?>
+						<?php form_text('{first_field}')?>
 						<?php form_button('Add new {controller_name}') ?>
 					</form>
 				</div>

@@ -25,7 +25,7 @@ class {model_name_1} extends CI_Model
 
 	public function get_all()
 	{
-		//$this->db->select("ID");
+		$this->db->select("{primary_key}, {first_field}");
 		$query = $this->db->get("{table_name}");
 		if($query->num_rows() > 0) return $query->result();
 		return FALSE;
