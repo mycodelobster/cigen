@@ -230,8 +230,8 @@ class Cigen extends CI_Controller
 	public function sublime($controller_name)
 	{
 		echo "subl app/controllers/$controller_name" . ".php ";
-		echo "app/controllers/$controller_name" . "_model.php ";
-		echo "app/views/$controller_name/$controller_name";
+		echo "app/models/$controller_name" . "_model.php ";
+		echo "app/views/$controller_name";
 	}
 	
 }
