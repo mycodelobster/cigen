@@ -226,6 +226,13 @@ class Cigen extends CI_Controller
 		$this->dbforge->create_table($table_name,TRUE);
 	}
 
+
+	public function sublime($controller_name)
+	{
+		echo "subl app/controllers/$controller_name" . ".php ";
+		echo "app/controllers/$controller_name" . "_model.php ";
+		echo "app/views/$controller_name/$controller_name";
+	}
 	
 }
 
