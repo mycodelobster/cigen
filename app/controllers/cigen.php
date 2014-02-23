@@ -103,6 +103,19 @@ class Cigen extends CI_Controller
 		}
 
 
+		$li  = "<li class='list-group-item'><?php echo anchor(base_url('$controller_name'), '".ucfirst($controller_name)."') ?></li>"; 
+		$sidebar_path = "./app/views/layout/sidebar.php";
+		$sidebar_content = file_get_contents('./app/views/layout/sidebar.php');
+		$sidebar_content = str_replace('<!--SECTION-->', "$li \n <!--SECTION-->", $sidebar_content);
+		if ( ! write_file($sidebar_path, $sidebar_content))
+		{
+			echo 'Unable to write the file';
+		}
+		else
+		{
+			echo "Add Sidebar Success \n" ;
+		}
+
 		echo "\nsubl app/controllers/$controller_name".".php"." app/models/$controller_name"."_model.php";
 		echo " app/views/$controller_name";
 
@@ -114,7 +127,21 @@ class Cigen extends CI_Controller
 		exec("rm -rf " . "./app/controllers/$controller_name" . ".php");
 		exec("rm -rf " . "./app/models/$controller_name" . "_model.php");
 		exec("rm -rf " . "./app/views/$controller_name");
-		echo "All $controller_name Structure was deleted";
+		echo "All $controller_name Structure was deleted \n";
+
+		// Remove Sidebar
+		$li  = "<li class='list-group-item'><?php echo anchor(base_url('$controller_name'), '".ucfirst($controller_name)."') ?></li>"; 
+		$sidebar_path = "./app/views/layout/sidebar.php";
+		$sidebar_content = file_get_contents('./app/views/layout/sidebar.php');
+		$sidebar_content = str_replace($li, "", $sidebar_content);
+		if ( ! write_file($sidebar_path, $sidebar_content))
+		{
+			echo 'Unable to write the file';
+		}
+		else
+		{
+			echo "Remove Sidebar \n" ;
+		}
 	}
 
 	public function build_config($folder,$database)
