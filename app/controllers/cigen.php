@@ -115,13 +115,14 @@ class Cigen extends CI_Controller
 		{
 			echo "Add Sidebar Success \n" ;
 		}
+		$this->build_sql($primary_key,$field,$table_name);
 
 		echo "\nsubl app/controllers/$controller_name".".php"." app/models/$controller_name"."_model.php";
 		echo " app/views/$controller_name";
 
 	}
 
-	public function remove($controller_name=null)
+	public function remove($controller_name=null, $table_name = false)
 	{
 		$this->load->helper('file');
 		exec("rm -rf " . "./app/controllers/$controller_name" . ".php");
@@ -142,6 +143,11 @@ class Cigen extends CI_Controller
 		{
 			echo "Remove Sidebar \n" ;
 		}
+		if($table_name){
+			$this->load->dbforge();
+			$this->dbforge->drop_table($table_name);
+		}
+
 	}
 
 	public function build_config($folder,$database)
@@ -171,6 +177,9 @@ class Cigen extends CI_Controller
 		{
 			echo "Database Created \n" ;
 		}
+
+
+
 	}
 
 	public function sidebar($controller){
@@ -196,6 +205,28 @@ class Cigen extends CI_Controller
 		echo "cigen remove  controller_name \n";
 	}
 
+	public function build_sql($primary_key,$first_field,$table_name)
+	{
+		$this->load->dbforge();
+		$this->dbforge->drop_table($table_name);
+		$fields = array(
+			"$primary_key" => array(
+				'type' => 'INT',
+				'constraint' =>11, 
+				'unsigned' => TRUE,
+				'auto_increment' => TRUE
+				),
+			"$first_field" => array(
+				'type' => 'VARCHAR',
+				'constraint' => '255',
+				),
+			);
+		$this->dbforge->add_field($fields);
+		$this->dbforge->add_key($primary_key, TRUE);
+		$this->dbforge->create_table($table_name,TRUE);
+	}
+
+	
 }
 
 /* End of file generator.php */
